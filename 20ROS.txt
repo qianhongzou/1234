@@ -1,0 +1,11 @@
+﻿wget http://fishros.com/install -O fishros && . fishros
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt update
+sudo apt install ros-noetic-desktop-full
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+roscore
+再打开一个终端 rosrun turtlesim turtlesim_node
+再打开一个新终端 rosrun turtlesim turtle_teleop_key  
+可以通过键盘的方向键控制小乌龟在界面中移动，如下图所示：（鼠标点击到teleop_key的命令窗口，不要点小乌龟的窗口）
